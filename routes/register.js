@@ -26,6 +26,7 @@ post( function(req, res, next) {
         var address = req.body.address;
         var gender = req.body.gender;
         var dob = req.body.dob;
+
         console.log("firstName ",firstName);
 
         mongoose.model('users').create({
@@ -37,7 +38,8 @@ post( function(req, res, next) {
             address : address,
             gender : gender,
             dob : dob,
-            userType:"user"
+            userType:"user",
+            approval:true
 
         }, function (err, result) {
 // console.log("result",result);
@@ -73,6 +75,7 @@ post( function(req, res, next) {
         var speciality=req.body.speciality;
         var degree=req.body.degree;
         var experience=req.body.experience;
+        var doctorId=req.body.doctorId;
         console.log("firstName ",firstName);
 
         mongoose.model('users').create({
@@ -86,6 +89,7 @@ post( function(req, res, next) {
             dob : dob,
             userType:"doctor",
 
+            doctorId:doctorId,
             degree:degree,
             experience:experience,
             speciality:speciality,
