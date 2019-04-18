@@ -9,7 +9,8 @@ var userSchema = new mongoose.Schema({
   mobile:Number,
   address:String,
   gender:String,
-
+  status:{type:String,default:"2"},
+  image:String,
 //for doctors
   degree:String,
   experience:Number,
