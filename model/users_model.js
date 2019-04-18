@@ -11,7 +11,10 @@ var userSchema = new mongoose.Schema({
   gender:String,
   status:{type:String,default:"2"},
   image:String,
+
 //for doctors
+approval:{type:Boolean,default:false},
+  doctorId:String,
   degree:String,
   experience:Number,
   speciality:String,
