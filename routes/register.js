@@ -11,12 +11,13 @@ router.route('/userregister').
 post( function(req, res, next) {
 
     console.log("userResult ");
+    console.log(req.body);
 
         // mongoose.model('users').find({}, function (err, userResult) {
         //     console.log("userResult ",userResult);
         
         // });
-        if(req.body.firstName && req.body.lastName &&req.body.email &&req.body.password &&req.body.address&&req.body.dob&&req.body.dob)
+if(req.body.firstName && req.body.lastName &&req.body.email &&req.body.password &&req.body.address&&req.body.mobile)
 {
         var firstName = req.body.firstName;
         var lastName = req.body.lastName;
@@ -57,12 +58,13 @@ router.route('/doctorregister').
 post( function(req, res, next) {
 
     console.log("doctorResult ");
+    console.log(req.body);
 
         // mongoose.model('users').find({}, function (err, userResult) {
         //     console.log("userResult ",userResult);
         
         // });
-        if(req.body.firstName && req.body.lastName &&req.body.email &&req.body.password &&req.body.address&&req.body.dob&&req.body.dob)
+        if(req.body.firstName && req.body.lastName &&req.body.email &&req.body.password &&req.body.address&&req.body.mobile&&req.body.speciality)
 {
         var firstName = req.body.firstName;
         var lastName = req.body.lastName;
@@ -76,6 +78,9 @@ post( function(req, res, next) {
         var degree=req.body.degree;
         var experience=req.body.experience;
         var doctorId=req.body.doctorId;
+        var hospitalName=req.body.hospitalName;
+        var university=req.body.university;
+
         console.log("firstName ",firstName);
 
         mongoose.model('users').create({
@@ -93,6 +98,8 @@ post( function(req, res, next) {
             degree:degree,
             experience:experience,
             speciality:speciality,
+            university:university,
+            hospitalName:hospitalName
 
         }, function (err, result) {
 // console.log("result",result);
