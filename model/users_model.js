@@ -18,5 +18,7 @@ approval:{type:Boolean,default:false},
   degree:String,
   experience:Number,
   speciality:String,
+  university:String,
+  hospitalName:String
 });
 mongoose.model('users', userSchema,'users');
