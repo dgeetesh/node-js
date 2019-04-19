@@ -13,6 +13,7 @@ var doctorRouter = require('./routes/doctor');
 var adminRouter = require('./routes/admin');
 var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
+var appointmentModel = require('./model/appointment_model');
 
 var app = express(); 
 app.all('*', function(req, res,next) {
